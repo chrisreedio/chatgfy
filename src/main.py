@@ -140,6 +140,10 @@ async def chat_command(int: discord.Interaction, message: str):
             f"Failed to start chat {str(e)}", ephemeral=True
         )
 
+@tree.command()
+async def hello(interaction: discord.Interaction):
+    """Says hello!"""
+    await interaction.response.send_message(f'Hi, {interaction.user.mention}')
 
 # calls for each message
 @client.event
